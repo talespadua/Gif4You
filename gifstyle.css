@@ -1,0 +1,55 @@
+body{
+	background-color: #553322
+}
+
+button {
+	 width: 33.33%;
+	 height: 100%;
+	 float: left;
+	 color: black;
+	 border: 1px solid green;
+	 background: #CC66FF; 
+}
+
+input {
+	display: none;
+}
+
+button:hover {
+	background: black;
+	color: white;
+}
+
+.buttonsdiv{
+	position: absolute;
+	background: #222222;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 10%;
+}
+
+.gifPreview {
+	position: absolute;
+	background: #222222;
+	top: 10%;
+	left: 0;
+	right: 0;
+	height: 70%;
+}
+
+.gifPreview img{
+	display: block;
+	width: auto;
+	height: 100%;
+	margin: auto;
+}
+
+.gifframes {
+	position: absolute;
+	background: #555555;
+	top: 80%;
+	left: 0;
+	right: 0;
+	height: 20%;
+}

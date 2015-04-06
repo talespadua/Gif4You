@@ -1,0 +1,20 @@
+{
+  "name": "Tales",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gif4you.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "window": {
+    "toolbar": true,
+    "frame": true,
+    "fullscreen": false,
+    "width": 640,
+    "height": 460,
+    "min_width": 640,
+    "min_height": 460
+  }
+}
