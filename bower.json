@@ -1,0 +1,22 @@
+{
+  "name": "gif4you",
+  "main": "gif4you.html",
+  "version": "0.0.1",
+  "authors": [
+    "talespadua <talescpadua@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}

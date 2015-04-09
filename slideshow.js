@@ -34,8 +34,9 @@ function doTheThings(){
 function changeGif(){
 	// gifPlace.setAttribute("background-image", );
 	var url = "url(gifs/" + gifs[n] + ")";
-	document.body.style.backgroundImage = url;
-
+  var gifConteiner = document.getElementById("gif");
+	//document.body.style.backgroundImage = url;
+  gifConteiner.style.backgroundImage = url;
 	if (n >= gifs.length -1) {
 		n = 0;
 	} else {
