@@ -7,12 +7,12 @@ var gifs = [];
 var gifPlace = document.getElementById('gifdiv');
 var n = 0;
 
-//var nwDir = path.dirname(process.execPath);
+var nwDir = path.dirname(process.execPath);
 
-fs.readdir(/*nwDir+*/'gifs', getFileNames);
+fs.readdir(nwDir+'\\gifs', getFileNames);
 
-/*console.log("Path is" + path);
-console.log("Dir is " + nwDir+'\\gifs');*/
+console.log("Path is" + path);
+console.log("Dir is " + nwDir+'\\gifs');
 
 function getFileNames(err, files) {
   if (err) {
@@ -32,18 +32,17 @@ function forEachFile(file) {
 }
 
 function doTheThings(){
-	fs.readdir(/*nwDir+*/'gifs', getFileNames);
+	fs.readdir(nwDir+'\\gifs', getFileNames);
 	changeGif();
 }
 
 function changeGif(){
 	// gifPlace.setAttribute("background-image", );
-	//var url = "url("+process.execPath+")"; VERSAO BUILD
-  var url = "url(gifs/" + gifs[n] + ")";
-  //console.log("On display, dir is "+ url);  
+	var url = "url("+process.execPath+")";
+  console.log("On display, dir is "+ url);  
   var gifConteiner = document.getElementById("gif");
 	//document.body.style.backgroundImage = url;
-  gifConteiner.style.backgroundImage = url //"url(C:/Users/tales.cpadua/Documents/Gif4You/gifs/"+gifs[n]+")" BUILD VER
+  gifConteiner.style.backgroundImage = "url(C:/Users/tales.cpadua/Documents/Gif4You/gifs/"+gifs[n]+")"
 	if (n >= gifs.length -1) {
 		n = 0;
 	} else {

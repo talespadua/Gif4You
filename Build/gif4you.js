@@ -14,9 +14,9 @@ var writeButton = document.getElementById('generateGif');
 var paths = [];
 var gifImage;
 
-//var nwDir = path.dirname(process.execPath);
+var nwDir = path.dirname(process.execPath);
 
-var settings = require('config.json');
+var settings = require(nwDir+'/config.json');
 
 //var slideStatus = false;
 
@@ -32,7 +32,7 @@ var openFileUpload = function(){
 
 var openSlideshow = function(){
 	var slide = gui.Window.open('slideshow.html', {
-		toolbar: true,
+		toolbar: false,
 		min_width: 640,
     	min_height: 460
 	});
@@ -55,7 +55,7 @@ var decodeBase64Image = function(dataString){
 var writeSettings = function(){
 	var data = JSON.stringify(settings, null, 4);
 
-	fs.writeFile('config.json', data, function(err){
+	fs.writeFile(nwDir+'/config.json', data, function(err){
 		if (err) throw err
 		console.log('Settings File updated');
 	})
@@ -68,7 +68,7 @@ var writeGif = function(){
 
 	var filename = settings.gifName + pad(settings.gifNumber, 4) + ".gif";
 
-	fs.writeFile('gifs/' + filename, imageBuffer.data, function(err){
+	fs.writeFile(nwDir+'\\gifs/' + filename, imageBuffer.data, function(err){
 		if (err) throw err
 		console.log('File saved as ' + filename);
 		alert("Arquivo salvo como: " + filename);
