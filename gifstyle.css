@@ -12,7 +12,6 @@ button {
 	 border: none;
 	 font-size: 16px;
 	 font-family: 'Arial', sans-serif;
-	 padding-bottom: 15px;
 }
 
 input {
@@ -25,14 +24,14 @@ button:hover {
 
 .buttonsdiv{
 	background: #222222;
-	height: 80px;
+	height: 70px;
 	width: 100%;
 }
 
 .gifPreview {
 	position: absolute;
 	background: #0ED4C5;
-	top: 10%;
+	top: 70px;
 	padding-top: 50px;
 	left: 0;
 	right: 0;
@@ -45,3 +44,4 @@ button:hover {
 	height: 100%;
 	margin: auto;
 }
+

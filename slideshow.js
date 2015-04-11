@@ -7,36 +7,42 @@ var gifs = [];
 var gifPlace = document.getElementById('gifdiv');
 var n = 0;
 
-fs.readdir('gifs', getFileNames);
+var nwDir = path.dirname(process.execPath);
+
+fs.readdir(nwDir+'\\gifs', getFileNames);
+
+console.log("Path is" + path);
+console.log("Dir is " + nwDir+'\\gifs');
 
 function getFileNames(err, files) {
   if (err) {
     throw err;
   }
   gifs = [];
+  console.log("file is " + files);
   files.forEach(forEachFile);
 }
 
 function forEachFile(file) {
 	fs.lstat('/'+file, function(err, stats){
-		if (path.extname(file) == ".gif") {
+    if (path.extname(file) == ".gif") {
 			gifs.push(file);
-		}
+	  }
 	});
 }
 
 function doTheThings(){
-	fs.readdir('gifs', getFileNames);
+	fs.readdir(nwDir+'\\gifs', getFileNames);
 	changeGif();
-	console.log("Doing the things")
 }
 
 function changeGif(){
 	// gifPlace.setAttribute("background-image", );
-	var url = "url(gifs/" + gifs[n] + ")";
+	var url = "url("+process.execPath+")";
+  console.log("On display, dir is "+ url);  
   var gifConteiner = document.getElementById("gif");
 	//document.body.style.backgroundImage = url;
-  gifConteiner.style.backgroundImage = url;
+  gifConteiner.style.backgroundImage = "url(C:/Users/tales.cpadua/Documents/Gif4You/gifs/"+gifs[n]+")"
 	if (n >= gifs.length -1) {
 		n = 0;
 	} else {

@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var gui = require('nw.gui');
-var settings = require('./config.json');
+
 
 var win = gui.Window.get();
 
@@ -13,6 +13,10 @@ var writeButton = document.getElementById('generateGif');
 
 var paths = [];
 var gifImage;
+
+var nwDir = path.dirname(process.execPath);
+
+var settings = require(nwDir+'/config.json');
 
 var pad = function (n, width, z) {
   z = z || '0';
@@ -45,7 +49,7 @@ var decodeBase64Image = function(dataString){
 var writeSettings = function(){
 	var data = JSON.stringify(settings, null, 4);
 
-	fs.writeFile('config.json', data, function(err){
+	fs.writeFile(nwDir+'/config.json', data, function(err){
 		if (err) throw err
 		console.log('Settings File updated');
 	})
@@ -58,7 +62,7 @@ var writeGif = function(){
 
 	var filename = settings.gifName + pad(settings.gifNumber, 4) + ".gif";
 
-	fs.writeFile('gifs/' + filename, imageBuffer.data, function(err){
+	fs.writeFile(nwDir+'\\gifs/' + filename, imageBuffer.data, function(err){
 		if (err) throw err
 		console.log('File saved as ' + filename);
 		alert("Arquivo salvo como: " + filename);
