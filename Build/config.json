@@ -1,4 +1,6 @@
 {
     "gifName": "Gif4you",
-    "gifNumber": 1
+    "gifNumber": 1,
+    "gifWidth": 500,
+    "gifHeight": 600
 }

@@ -43,7 +43,7 @@ function changeGif(){
   //console.log("On display, dir is "+ url);  
   var gifConteiner = document.getElementById("gif");
 	//document.body.style.backgroundImage = url;
-  gifConteiner.style.backgroundImage = url //"url(C:/Users/tales.cpadua/Documents/Gif4You/gifs/"+gifs[n]+")" BUILD VER
+  gifConteiner.style.backgroundImage = url; //"url(C:/Users/tales.cpadua/Documents/Gif4You/gifs/"+gifs[n]+")" BUILD VER
 	if (n >= gifs.length -1) {
 		n = 0;
 	} else {

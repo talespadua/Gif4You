@@ -14,6 +14,11 @@ fs.readdir(nwDir+'\\gifs', getFileNames);
 console.log("Path is" + path);
 console.log("Dir is " + nwDir+'\\gifs');
 
+a_nwdir = nwDir.replace(/\\/g,"/");
+a_nwdir = a_nwdir+"/gifs/";
+
+console.log("Other dir is: " + a_nwdir);
+
 function getFileNames(err, files) {
   if (err) {
     throw err;
@@ -38,11 +43,11 @@ function doTheThings(){
 
 function changeGif(){
 	// gifPlace.setAttribute("background-image", );
-	var url = "url("+process.execPath+")";
+	var url = "url("+a_nwdir+gifs[n]+")";
   console.log("On display, dir is "+ url);  
   var gifConteiner = document.getElementById("gif");
 	//document.body.style.backgroundImage = url;
-  gifConteiner.style.backgroundImage = "url(C:/Users/tales.cpadua/Documents/Gif4You/gifs/"+gifs[n]+")"
+  gifConteiner.style.backgroundImage = url;
 	if (n >= gifs.length -1) {
 		n = 0;
 	} else {

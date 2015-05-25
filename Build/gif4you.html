@@ -4,9 +4,27 @@
 	<meta charset="UTF-8">
 	<title>Gif4You</title>
 	<script src="libs/gifshot.js"></script>
+	<link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="gifstyle.css" type="text/css"/>
 </head>
 <body>
+	<header class="frame">
+		<h1 class="title">Gif4You</h1>
+
+		<div class="buttons">
+			<button onclick="minimize()">
+				<i class="fa fa-minus">	</i>
+			</button>
+			<button onclick="maximize()">
+				<i class="fa fa-expand"></i>
+			</button>
+			<button onclick="closewindow()">
+				<i class="fa fa-times"></i>
+			</button>			
+		</div>
+	</header>
+
 	<div class="buttonsdiv" >
 		<input type="file" id="getFile" accept="images/*" multiple/>
 		<button id="openFile" type="button">Selecionar Imagens</button>

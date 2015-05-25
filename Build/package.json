@@ -10,7 +10,7 @@
   "license": "MIT",
   "window": {
     "toolbar": false,
-    "frame": true,
+    "frame": false,
     "fullscreen": false,
     "width": 640,
     "height": 460,

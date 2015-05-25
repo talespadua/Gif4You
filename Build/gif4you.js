@@ -2,7 +2,6 @@ var fs = require('fs');
 var path = require('path');
 var gui = require('nw.gui');
 
-
 var win = gui.Window.get();
 
 var uploadElement = document.getElementById('getFile');
@@ -19,6 +18,24 @@ var nwDir = path.dirname(process.execPath);
 var settings = require(nwDir+'/config.json');
 
 //var slideStatus = false;
+
+function minimize(){
+	win.minimize();
+}
+
+function maximize() {
+	var isfull = win.isFullscreen;
+    if (isfull){
+    	win.leaveFullscreen();
+    }
+    else{
+    	win.enterFullscreen();
+    } 
+}
+
+function closewindow() {
+	win.close();
+}
 
 var pad = function (n, width, z) {
   z = z || '0';
@@ -93,8 +110,8 @@ var selectGifs = function () {
 
 	gifshot.createGIF({
 		images: paths,
-		gifWidth: 300,
-		gifHeight: 500,
+		gifWidth: settings.gifWidth,
+		gifHeight: settings.gifHeight,
 		interval:0.2
 	} ,function(obj) {
 		if(!obj.error) {
